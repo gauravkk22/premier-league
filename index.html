@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="premier-league-app">
+<head>
+	<title>Fanstasy League</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.ico">
+	<!-- INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ngDialog.css">
+    <link rel="stylesheet" href="css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <base href="/">
+   
+
+</head>
+<body>
+              <div class="container-fluid navi">
+                    <div class="row">
+                            <div class="manu col-lg-1 col-md-1 col-sm-2"></div>
+                            <div class="chelsea col-lg-1 col-md-1"></div>
+                            <div class="totenham col-lg-1 col-md-1 col-sm-2"></div>
+                            <div class="leister col-lg-1 col-md-1"></div>
+                        
+                            <div class=" heading-text col-lg-4 col-md-4 col-sm-2">
+                                <div class="row">
+                                    <div class="navigation col-lg-6 col-md-6 col-sm-6 col-xs-6"> 
+                                        <a href="#/home" ><img class="logo-img" src="css/img/fantasy-league-logo.png">
+                                        </img></a>
+                                    </div>
+                                    <div class="nav-text col-lg-6 col-md-6 col-sm-6 col-xs-6" >Fantasy League</div>
+                                </div>    
+                            </div> 
+                            <div class="nottingham col-lg-1 col-md-1 col-sm-2"></div>
+                            <div class="reading col-lg-1 col-md-1"></div>
+                            <div class="mancity col-lg-1 col-md-1"></div>
+                            <div class="liverpool col-lg-1 col-md-1 col-sm-2"></div>
+                     </div>
+               </div>
+               <br>
+                <div class="main-bg">
+                    <div ng-view style="height:800px;color:red">
+
+                    </div>
+                    <a href="#/choose11" > Click Here to save</a>
+                </div>
+
+    	       <div class="signature">
+                    <p><b>Made with <i class="much-heart"></i> by Gaurav</b> 
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <b>Follow Us On</b>
+                    <i id="fb-logo" class="fa fa-facebook-official" aria-hidden="true" style="width:50px;height:50px;"></i>
+                    <i class="fa fa-twitter" aria-hidden="true" style="width:50px;height:50px;"></i>
+                    <i class="fa fa-google-plus" aria-hidden="true" style="width:50px;height:50px;"></i>
+                </p>
+                </div>
+</body>
+</html>
+    
+     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script> 
+    <script type="text/javascript" src="js/app.js"></script>   
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/ngDialog.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-timer/1.3.4/angular-timer.js"</script>
+    <script type="text/javascript" src="js/controllers/mainController.js"></script>
+    <script type="text/javascript" src="js/controllers/services.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.logo-img').hover(function(){
+            this.addClass('src', 'css/img/fantasy-league-logo2.png');
+            this.removeClass('src', 'css/img/fantasy-league-logo.png');
+        });
+
+    });  
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+
+ </script>
+

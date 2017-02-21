@@ -1,0 +1,95 @@
+<div class=" container-fluid main-content" ng-controller="mainController" >
+	<div class="status-area ">
+			<div class="no-of-player-selected">
+				<div class='container-fluid title team'>
+					<img src="css/img/team.png" style="height:60px;width:60px;margin-left:5px; margin-bottom: -25px;margin-top: -19px;">
+					<span  class="test" data-toggle="tooltip" data-placement="right" title="{{count}} players selected">Player Selected
+					</span>
+				</div>
+				<div class='container-fluid'>
+						<div class="total-no-of-player-status">Total Players: 
+							<span class="badge badge-warning"> &nbsp;{{count}}</span>
+						</div>
+						<!-- <div class="progress">
+						    <div id="progress-bar" class="progress-bar">
+						    </div>
+						</div> -->
+				</div>
+			</div>
+			<div class="no-of-role">
+				<div class='container-fluid title'>
+					<span  class="test" data-toggle="tooltip" data-placement="right" title="Players in each category">Categories
+					</span>
+				</div>
+				<div class='container-fluid '>
+						<div class="no-of-defender"> Defenders <span class="badge badge-warning">{{defenders}}</span></div>
+						<div class="no-of-forward">Forward <span class="badge badge-warning badge-important">{{forwards}}</span></button></div>
+						<div class="no-of-midfielder">Mid Fielder <span class="badge badge-warning">{{midfielders}}</span></div>
+						<div class="no-of-goalkeeper">Goal Keeper <span class="badge badge-warning">{{goalkeepers}}</span></div>
+				</div>
+			</div>
+			<div class="budget-remaining">
+				<div class='container-fluid title'>
+					<img src="css/img/money.png" style="height:60px;width:60px;margin-left:5px; margin-bottom: -25px;margin-top: -19px;">
+					<span  class="test" data-toggle="tooltip" data-placement="right" title="Total amount remaining">Budget
+					</span> 
+				</div>
+				<div class="budget-remaining-status"><span style="color:red;"> $</span> {{totalamount - selectedamount}} left</div>
+			</div>	
+
+
+	</div>
+	<div class=" container-fluid selection-area" >
+		<form id="tm_name">
+			<input id="team_name_submit" type="text" placeholder="Please enter your team name" style="position:fixed;margin-left:30px;height:24px;width:400px;" ng-model="team_name">
+			</input>
+
+			<input id="team_name_submit_btn" type="submit" class="btn btn-success " ng-click="save_team_name(team_name)"  style="position: fixed;display:inline-block;margin-left:448px;height:34px;" >
+			</input>
+		</form>
+		<br><br>
+
+		<div class="selection-ground-squad">
+			<div style="text-align:center;color:red;font-family:'webfont';font-size:22px;height:35px;background:#170C20;">Squad</div>
+				<table id="selected-list">
+				</table> 
+		</div>
+
+		<div class="player-list" ng-model="playerslist">
+		
+				  <table class="table ">
+				    <thead>
+				      <tr class="player-list-header">
+				      	<td></td>
+				      	<td></td>
+				      	<td >
+				        <marquee class="player-list-marquee">Player List</marquee>
+				        </td>
+				        <td></td>
+				        <td></td>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr ng-repeat="player in playerslist" >
+				      	<td><i class="fa fa-futbol-o" aria-hidden="true" style="width:20px;height:20px;"></i></td>
+				        <td >{{player.name}}</td>
+				        <td>{{player.role}}</td>
+				        <td>{{player.price}}</td>
+				        <td><!-- <i class="fa fa-plus" aria-hidden="true" style="width:20px;height:20px;item-aligns:center" onClick="addAnother()"></i></td> -->
+				        <button class="btn" ng-click="addPlayer(player.id,player.name,player.role,player.price,player.img)" style="border:1px solid red;border-radius:50%;width:49px;height:49px;">
+				        	<image id="plussign{{player.id}}" src="css/img/add.png" style="width:28px;height:28px;item-aligns:center"> 
+				        </button>
+				        <button class="btn removebutton" ng-click="removePlayer(player.id,player.name,player.role,player.price,player.img)" style="border:1px solid red;border-radius:50%;width:49px;height:49px;"> 
+				        	<image id="removesign{{player.id}}" src="css/img/remove.png" style="width:28px;height:28px;item-aligns:center"> 
+				        </button>
+				        <td>
+				      </tr>
+				    </tbody>
+				  </table>
+
+		</div>
+		
+			</div>
+
+</div>
+
